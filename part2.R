@@ -74,7 +74,7 @@ sentences_annotated$rolled_sentiment <- rolling_plot(sentences_annotated$mean_se
 View(sentences_annotated)
 
 # create index for percentage of book
-sentences_annotated$book_percentage <- 1:length(sentences_annotated$paragraph_id)/length(sentences_annotated$paragraph_id)*100
+sentences_annotated$book_percentage <- 1:length(sentences_annotated$sentence_id)/length(sentences_annotated$sentence_id)*100
 View(sentences_annotated)
 
 p1 <- ggplot(data = sentences_annotated) +
