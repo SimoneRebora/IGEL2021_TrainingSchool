@@ -85,15 +85,10 @@ p1 <- ggplot(data = sentences_annotated) +
 p1  
 
 ### 4. Multi-dimensional SA (with SentiArt)
+# info: https://github.com/matinho13/SentiArt
 
-# download SentiArt
-download.file("https://github.com/matinho13/SentiArt/raw/main/250kSentiArt_EN.xlsx", destfile = "250kSentiArt_EN.xlsx")
-
-install.packages("readxl")
-library(readxl)
-
-# read SentiArt as excel file
-sentiart <- read_excel("250kSentiArt_EN.xlsx")
+# read SentiArt from resources folder
+sentiart <- read.csv("resources/SentiArt.csv", stringsAsFactors = F)
 View(sentiart)
 
 # note: Sentiart includes values per word (not lemma) in lowercase, so we need to lowercase the tokens in our text and perform the analysis on them
