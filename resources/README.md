@@ -1,1 +1,1 @@
-Lexicon copied and converted from: https://github.com/matinho13/SentiArt/blob/main/250kSentiArt_EN.xlsx
+SentiArt lexicon downloaded and converted from: https://github.com/matinho13/SentiArt/blob/main/250kSentiArt_EN.xlsx
