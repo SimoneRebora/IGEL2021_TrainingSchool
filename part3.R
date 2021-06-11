@@ -2,7 +2,6 @@
 
 library(udpipe)
 library(tidyverse)
-library(readxl)
 
 udmodel <- udpipe_download_model(language = "english")
 udmodel <- udpipe_load_model(file = udmodel$file_model)
@@ -13,7 +12,7 @@ text <- paste(text, collapse = "\n")
 text_annotated <- udpipe_annotate(udmodel, x = text, trace = T)
 text_annotated <- as.data.frame(text_annotated, detailed = TRUE)
 
-sentiart <- read_excel("250kSentiArt_EN.xlsx")
+sentiart <- read.csv("resources/SentiArt.csv", stringsAsFactors = F)
 text_annotated$token_lower <- tolower(text_annotated$token)
 sentiart_POS_sel <- c("NOUN", "VERB", "ADV", "ADJ")
 text_annotated$token_lower[which(!text_annotated$upos %in% sentiart_POS_sel)] <- NA

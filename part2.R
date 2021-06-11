@@ -2,7 +2,6 @@
 # https://bnosac.github.io/udpipe/en/
 
 install.packages("udpipe")
-
 library(udpipe)
 
 udmodel <- udpipe_download_model(language = "english")
@@ -41,6 +40,7 @@ my_nrc <- nrc[nrc$lang == my_language & nrc$sentiment == my_sentiment,]
 ### --------------
 
 ### 2. Enter Tidyverse
+
 install.packages("tidyverse")
 library(tidyverse)
 
@@ -52,11 +52,15 @@ sentences_annotated <- text_annotated %>%
   group_by(sentence_id) %>%
   summarize(mean_sentiment = mean(sentiment))
 
+View(sentences_annotated)
+
 ### -------------- Your turn
 # Try to get mean sentiment with of the "value" column (the one with NAs)
 ### -------------- 
 
 ### 3. Plot sentiment with tidyverse
+
+library(syuzhet)
 
 ###function for rolling plot (taken from https://github.com/mjockers/syuzhet/blob/master/R/syuzhet.R)
 rolling_plot <- function (raw_values, window = 0.1){
@@ -102,6 +106,8 @@ text_annotated <- left_join(text_annotated, sentiart, by = c("token_lower" = "wo
 sentiart_POS_sel <- c("NOUN", "VERB", "ADV", "ADJ")
 text_annotated$token_lower[which(!text_annotated$upos %in% sentiart_POS_sel)] <- NA
 text_annotated <- left_join(text_annotated, sentiart, by = c("token_lower" = "word")) 
+
+View(text_annotated)
 
 ### -------------- Your turn
 # Think about a possible rule to manage valence shifters
