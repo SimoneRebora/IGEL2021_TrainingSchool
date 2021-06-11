@@ -5,7 +5,7 @@ Materials for the hands-on sessions of the "Sentiment Analysis" training school 
 
 ### Preparation
 
-No need to install software on your machine. We will mainly use online platforms like RStudio Cloud and Google Colab.  
+No need to install software on your machine. We will mainly use online platforms like *RStudio Cloud* and *Google Colab*.  
 Only requirement: to have an active Google (gmail) account.
 
 ### Program
